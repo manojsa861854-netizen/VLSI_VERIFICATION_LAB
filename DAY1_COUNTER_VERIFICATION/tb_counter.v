@@ -25,7 +25,13 @@ end
 
 initial
 begin
-    $monitor("TIME=%0t RESET=%b OUT=%d", $time, rst, out);
+    $monitor("TIME=%0t CLK=%b RESET=%b OUT=%d", $time, clk, rst, out);
+end
+
+initial
+begin
+    $dumpfile("counter.vcd");
+    $dumpvars(0, tb_counter);
 end
 
 endmodule
